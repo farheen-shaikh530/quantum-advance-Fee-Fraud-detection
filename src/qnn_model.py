@@ -5,16 +5,16 @@ import pennylane as qml
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 
-def build_qnn(n_qubits, n_layers=2, encoding="dense", shots=None):
+def build_qnn(n_qubits: int, n_layers: int = 2, encoding: str = "dense", shots=None):
     """
-    Build a PennyLane QNN circuit.
+    Build a PennyLane QNode for a QNN.
 
     encoding:
-      - "basic": one feature per qubit using RY(pi*x)
-      - "dense": pack multiple features per qubit using RY/RZ/RX blocks (data re-upload style)
+      - "basic": one feature per qubit using RY(pi*x[q])
+      - "dense": pack multiple features per qubit using RY/RZ/RX blocks
     shots:
-      - None  => analytic simulator (deterministic gradients, ideal for training)
-      - int   => shot-based simulator (noisier gradients, more hardware-like)
+      - None  => analytic simulator (deterministic gradients)
+      - int   => shot-based simulator (noisier, hardware-like)
     """
     dev = qml.device("default.qubit", wires=n_qubits, shots=shots)
 
@@ -22,12 +22,11 @@ def build_qnn(n_qubits, n_layers=2, encoding="dense", shots=None):
     def circuit(x, weights):
         # --------- Data Encoding ----------
         if encoding == "basic":
-            # expects at least n_qubits features
+            # assumes len(x) >= n_qubits
             for q in range(n_qubits):
                 qml.RY(np.pi * x[q], wires=q)
 
         elif encoding == "dense":
-            # packs 3 features per qubit (wrap-around)
             d = len(x)
             for q in range(n_qubits):
                 i1 = (3 * q + 0) % d
@@ -50,11 +49,11 @@ def build_qnn(n_qubits, n_layers=2, encoding="dense", shots=None):
                 qml.RY(weights[l, q, 0], wires=q)
                 qml.RZ(weights[l, q, 1], wires=q)
 
-            # simple linear entanglement
+            # linear entanglement
             for q in range(n_qubits - 1):
                 qml.CNOT(wires=[q, q + 1])
 
-        # binary output via expectation value
+        # single-qubit readout
         return qml.expval(qml.PauliZ(0))
 
     return circuit
@@ -62,68 +61,59 @@ def build_qnn(n_qubits, n_layers=2, encoding="dense", shots=None):
 
 def train_qnn(
     X_train, y_train, X_test, y_test,
-    n_qubits=6, n_layers=2,
-    steps=300, lr=0.05,
-    batch_size=16,
-    encoding="dense",
-    optimizer_name="adam",     # "adam" or "gd"
-    shots=None,                # None recommended for training
-    seed=42
+    n_qubits: int = 6,
+    n_layers: int = 2,
+    steps: int = 300,
+    lr: float = 0.05,
+    batch_size: int = 16,
+    encoding: str = "dense",
+    optimizer_name: str = "adam",
+    shots=None,
+    seed: int = 42
 ):
     """
-    Train a QNN with gradient-based optimization in PennyLane.
+    Gradient-based training for QNN using PennyLane optimizers.
 
-    Returns a dict:
-      - accuracy, precision, recall, f1
-      - sec_per_pred
-      - weights
-      - loss_history
+    Returns:
+      dict with keys:
+        accuracy, precision, recall, f1, sec_per_pred, loss_history
     """
     rng = np.random.default_rng(seed)
 
     X_train = np.asarray(X_train, dtype=float)
     y_train = np.asarray(y_train, dtype=int)
-    X_test  = np.asarray(X_test, dtype=float)
-    y_test  = np.asarray(y_test, dtype=int)
+    X_test = np.asarray(X_test, dtype=float)
+    y_test = np.asarray(y_test, dtype=int)
 
     if len(X_train) == 0:
         raise ValueError("Empty training set after preprocessing.")
-    if X_train.ndim != 2:
-        raise ValueError("X_train must be a 2D array of shape (n_samples, n_features).")
-    if X_train.shape[0] != y_train.shape[0]:
-        raise ValueError("X_train and y_train must have the same number of rows.")
-    if X_test.shape[0] != y_test.shape[0]:
-        raise ValueError("X_test and y_test must have the same number of rows.")
 
-    circuit = build_qnn(n_qubits, n_layers=n_layers, encoding=encoding, shots=shots)
+    circuit = build_qnn(n_qubits=n_qubits, n_layers=n_layers, encoding=encoding, shots=shots)
 
-    # weights shape: (layers, qubits, 2) for RY and RZ in each layer/qubit
+    # weights shape: (layers, qubits, 2)
     w0 = rng.normal(scale=0.1, size=(n_layers, n_qubits, 2))
     weights = qml.numpy.array(w0, requires_grad=True)
 
-    # pick optimizer
-    name = optimizer_name.lower().strip()
-    if name == "adam":
+    # optimizer selection
+    if optimizer_name.lower() == "adam":
         opt = qml.AdamOptimizer(stepsize=lr)
-    elif name in ["gd", "gradientdescent", "sgd"]:
+    elif optimizer_name.lower() in ["gd", "gradientdescent", "sgd"]:
         opt = qml.GradientDescentOptimizer(stepsize=lr)
     else:
         raise ValueError("optimizer_name must be 'adam' or 'gd'")
 
     def forward_prob(x, w):
-        # circuit output z in [-1,1] -> probability in [0,1]
+        # map circuit output z in [-1,1] -> probability in [0,1]
         z = circuit(x, w)
-        return (z + 1) / 2
+        return (z + 1.0) / 2.0
 
     def batch_loss(w, Xb, yb):
-        # binary cross-entropy
+        # binary cross entropy
         eps = 1e-9
         probs = qml.numpy.array([forward_prob(x, w) for x in Xb])
         probs = qml.numpy.clip(probs, eps, 1 - eps)
         yb = qml.numpy.array(yb)
-        return -qml.numpy.mean(
-            yb * qml.numpy.log(probs) + (1 - yb) * qml.numpy.log(1 - probs)
-        )
+        return -qml.numpy.mean(yb * qml.numpy.log(probs) + (1 - yb) * qml.numpy.log(1 - probs))
 
     n = len(X_train)
     loss_history = []
@@ -135,7 +125,6 @@ def train_qnn(
 
         weights = opt.step(lambda w: batch_loss(w, Xb, yb), weights)
 
-        # record loss every step (for learning curve)
         loss_val = float(batch_loss(weights, Xb, yb))
         loss_history.append(loss_val)
 
@@ -151,11 +140,10 @@ def train_qnn(
     sec_per_pred = (t1 - t0) / max(len(X_test), 1)
 
     return {
-        "weights": np.array(weights),
         "accuracy": accuracy_score(y_test, y_pred),
         "precision": precision_score(y_test, y_pred, zero_division=0),
         "recall": recall_score(y_test, y_pred, zero_division=0),
         "f1": f1_score(y_test, y_pred, zero_division=0),
         "sec_per_pred": sec_per_pred,
-        "loss_history": loss_history
+        "loss_history": loss_history,
     }
