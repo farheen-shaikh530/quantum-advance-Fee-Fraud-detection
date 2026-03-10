@@ -93,42 +93,52 @@ All models are evaluated using the same train/test splits:
 
 ## Installation & Setup
 
-### ✅ macOS / Linux
-# 1. Clone the repository
+### ✅ macOS or Linux
 
-```bash
 
-git clone https://github.com/farheen-shaikh530/quantum-advance-Fee-Fraud-detection.git
-cd quantum-advance-Fee-Fraud-detection
-```
-
-# 2. Create virtual environment
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-# 3. Install dependencies
-```bash
-pip install -r requirements.txt
-
-```
-
-# 1. Clone repository
+## 1. Clone repository
 
 ``` bash
 git clone https://github.com/farheen-shaikh530/quantum-advance-Fee-Fraud-detection.git
 cd quantum-advance-Fee-Fraud-detection
 ```
 
-# 2. Create virtual environment
+## 2. Create virtual environment
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-# 3. Install dependencies
+## 3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
+
+
+## 📊 Experimental Results
+
+The following figures illustrate the **training dynamics of the Quantum Neural Network (QNN)** under simulated **Noisy Intermediate-Scale Quantum (NISQ)** conditions. These experiments analyze how **decoherence and noise influence optimization stability and convergence** in variational quantum circuits.
+
+<p align="center">
+
+<img src="https://github.com/user-attachments/assets/b1ba4b6f-590f-4a58-9474-53cd704eadfb" width="420" height="260"/>
+<img src="https://github.com/user-attachments/assets/f3178bb9-5995-4e0c-a969-8d1173d3208e" width="420" height="260"/>
+
+<br><br>
+
+<img src="https://github.com/user-attachments/assets/7e363a41-6b72-4fa9-ba35-563ef7c8bd05" width="420" height="260"/>
+<img src="https://github.com/user-attachments/assets/71fff49a-3582-4998-a12a-27a6ba27ce7f" width="420" height="260"/>
+
+</p>
+
+### 🔬 Result Interpretation
+
+- **Figure 1:** Early-stage training loss during QNN optimization under simulated decoherence.
+- **Figure 2:** Loss fluctuations reflecting noise sensitivity in variational circuits.
+- **Figure 3:** Training convergence behavior across iterations.
+- **Figure 4:** Stabilization phase of the QNN optimization process under NISQ constraints.
+
+These results highlight how **quantum noise and decoherence affect the optimization landscape of variational quantum circuits**, emphasizing the importance of **noise-aware circuit design and robust optimization strategies for practical QML systems**.
+
+---
