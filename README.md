@@ -122,13 +122,13 @@ The following figures illustrate the **training dynamics of the Quantum Neural N
 
 <p align="center">
 
-<img src="https://github.com/user-attachments/assets/b1ba4b6f-590f-4a58-9474-53cd704eadfb" width="420" height="260"/>
-<img src="https://github.com/user-attachments/assets/f3178bb9-5995-4e0c-a969-8d1173d3208e" width="420" height="260"/>
+<img src="https://github.com/user-attachments/assets/b1ba4b6f-590f-4a58-9474-53cd704eadfb" width="400" height="220"/>
+<img src="https://github.com/user-attachments/assets/f3178bb9-5995-4e0c-a969-8d1173d3208e" width="400" height="220"/>
 
 <br><br>
 
-<img src="https://github.com/user-attachments/assets/7e363a41-6b72-4fa9-ba35-563ef7c8bd05" width="420" height="260"/>
-<img src="https://github.com/user-attachments/assets/71fff49a-3582-4998-a12a-27a6ba27ce7f" width="420" height="260"/>
+<img src="https://github.com/user-attachments/assets/7e363a41-6b72-4fa9-ba35-563ef7c8bd05" width="400" height="220"/>
+<img src="https://github.com/user-attachments/assets/71fff49a-3582-4998-a12a-27a6ba27ce7f" width="400" height="220"/>
 
 </p>
 
