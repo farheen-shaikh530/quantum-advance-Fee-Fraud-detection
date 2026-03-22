@@ -1,144 +1,164 @@
-### Paper Title : Quantum vs Classical Models for Rapid Advance-Fee Fraud Detection Under NISQ Constraints
 
+#  Quantum vs Classical Models for Rapid Advance-Fee Fraud Detection under NISQ Constraints
 
-## Publication & Conference 
-
-This work has been **accepted for publication** at an IEEE-sponsored international conference.
-
-**Author:** Farheen Shabbir Shaikh 
-**Conference:** IEEE SoutheastCon 2026  
-**Organized by:** IEEE Region 3  
-**Paper Status:** Accepted (to be published)  
-**Publication Date:** **March 13, 2026**  
-**Conference Website:** https://ieeesoutheastcon.org/call-for-papers/
-
-**Overview:** The paper presents an experimental evaluation of Quantum Neural Networks (QNNs) for time-critical Advance-Fee Fraud (AFF) detection, emphasizing optimization behavior, qubit scaling effects, and comparison against classical machine-learning baselines.
-
-This repository implements and evaluates **Quantum Neural Networks (QNNs)** against **classical machine-learning models** for detecting **Advance-Fee Fraud (AFF)** using compact behavioral features. The primary focus is on **Inter-Payment Interval (IPI)**, a time-critical feature that captures attacker-induced urgency. The project investigates whether **Quantum Machine Learning (QML)** can provide competitive detection performance under **Noisy Intermediate-Scale Quantum (NISQ)** constraints, and how **optimization behavior and qubit scaling** affect model reliability.
+ **Accepted and Presented at IEEE SoutheastCon 2026**  
+ **Author:** Farheen Shabbir Shaikh  
+ University of the Pacific - Masters in Computer Science
+ Publication Date: March 2026
 
 ---
 
-## 📌 Project Objectives
+## 🚨 Problem Context: Advance-Fee Fraud (AFF)
 
-- To design a Quantum Machine Learning framework for Advance-Fee Fraud detection using behavior-driven temporal features.
-- To empirically analyze Quantum Neural Network (QNN) performance under Noisy Intermediate-Scale Quantum (NISQ) constraints, with a focus on noise sensitivity, shallow circuit design, and optimization stability.
-- To evaluate the impact of qubit scaling on training convergence, loss behavior, and detection accuracy in variational quantum circuits.
-- To investigate how quantum feature encoding and optimization strategies influence inference latency and detection reliability.
-- To compare QNN performance against classical machine-learning baselines using identical feature sets and evaluation metrics.
- 
+Advance-Fee Fraud (AFF) is a **time-critical financial scam** where attackers exploit urgency and emotional manipulation to extract payments.
+
+> “We can approve your loan instantly… just pay a small processing fee first.”
+
+ Reality: No lender, no loan, no approval  
+
+### Victims
+- Individuals with low credit scores, struggling to secure loans   
+- Job seekers in urgent financial need  
+- Victims of relationship-based scams  
 
 ---
 
-## 🧠 Models Implemented
+## 💡 Motivation
+
+- **7,097 AFF complaints (IC3 Report 2024)**
+-  Victims pay upfront for **non-existent services**
+-  Fraud happens **within minutes → requires early detection**
+
+- Traditional ML models rely on historical patterns. This work focuses on **early behavioral signals**
+
+---
+
+## 🧠 Proposed Approach
+
+We propose a **Quantum Neural Network (QNN)** framework that:
+
+- Classify **early-stage fraud signals**
+- Uses **behavior-driven temporal features**
+- Operates under **NISQ (Noisy Intermediate-Scale Quantum) constraints**
+- Benchmarks against **3 widely used ML models**
+
+---
+
+## 🗂️ Custom: Dataset Construction
+
+| Feature | Description |
+|--------|------------|
+| `bank_account_no` | User identifier |
+| `scam_msg_time` | Timestamp of scam message |
+| `first_pay_time` | Timestamp of first payment |
+| `amount` | Transaction amount |
+| `Flag` | 1 = Fraud, 0 = Non-Fraud |
+
+
+### Data Distribution is imbalance
+- Total Records: **2,000**
+- Fraud Cases: **100 (5%)**
+- Non-Fraud: **1,900 (95%)**
+
+⚠️ **Challenge:** Imbalanced dataset → risk of bias toward non-fraud class
+
+---
+
+## ⚙️ Feature Engineering(Novel)
+
+Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw timestamps and amounts into meaningful signals. 50 seconds < IPI = higher likelihood of fraud
+
+---
+
+## 🧠 Model Architecture
 
 ### Quantum Model
-- **Quantum Neural Network (QNN)**
-- Variational Quantum Circuit (VQC)
-- Dense angle encoding
+- Variational Quantum Neural Network (QNN)
+- Angle encoding
 - Qubit configurations: **4, 5, 6, 7**
-- Simulator-based execution (NISQ emulation)
+- Shallow circuits (NISQ-friendly)
+- Entanglement: CNOT layers
 
-###  Classical Baselines
-- **Logistic Regression**
-- **Support Vector Machine (RBF kernel)**
+### Classical Baselines
+- Logistic Regression  
+- Support Vector Machine (RBF)  
+- Neural Network (MLP)
+
 
 ---
 
-##  Features Used
+## ⚙️ Training Strategy
 
-Behavior-driven features designed for early-stage fraud detection:
-
-- **Inter-Payment Interval (IPI)** – primary feature
-- Response time between scam messages
-- Estimated message count prior to payment
-- Log-transformed transaction amount
-- Account-level z-score normalization (amount & IPI)
+- Mini-batch training  
+- Adam optimizer  
+- Loss monitoring  
 
 ---
-
-## ⚙️ Tech Stack
-
-### Programming & Libraries
-- **Python 3.9+**
-- **PennyLane** – quantum ML framework
-- **NumPy** – numerical computing
-- **Pandas** – data processing
-- **scikit-learn** – classical ML models & preprocessing
-- **Matplotlib** – visualization
-
-### Quantum Simulation
-- PennyLane default.qubit simulator
-- NISQ-aware shallow circuits
-
-### Tooling
-- Git & GitHub (version control)
-- VS Code
-- Virtual environments (venv)
-
----
-
-## 📈 Evaluation Metrics
-
-All models are evaluated using the same train/test splits:
-
-- **Accuracy**
-- **Precision**
-- **Recall** *(critical)*
-- **F1-score**
-- **Training loss curves** (QNN optimization behavior)
-- **Performance vs qubit count**
-- **Inference latency**
-
----
-
-## Installation & Setup
-
-### ✅ macOS or Linux
-
-
-## 1. Clone repository
-
-``` bash
-git clone https://github.com/farheen-shaikh530/quantum-advance-Fee-Fraud-detection.git
-cd quantum-advance-Fee-Fraud-detection
-```
-
-## 2. Create virtual environment
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-## 3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-
 
 ## 📊 Experimental Results
 
-The following figures illustrate the **training dynamics of the Quantum Neural Network (QNN)** under simulated **Noisy Intermediate-Scale Quantum (NISQ)** conditions. These experiments analyze how **decoherence and noise influence optimization stability and convergence** in variational quantum circuits.
+<h3 align="center"> Result 1: Training Loss (On qubit scaling)</h2>
 
 <p align="center">
 
 <img src="https://github.com/user-attachments/assets/b1ba4b6f-590f-4a58-9474-53cd704eadfb" width="400" height="220"/>
 <img src="https://github.com/user-attachments/assets/f3178bb9-5995-4e0c-a969-8d1173d3208e" width="400" height="220"/>
-
-<br><br>
-
 <img src="https://github.com/user-attachments/assets/7e363a41-6b72-4fa9-ba35-563ef7c8bd05" width="400" height="220"/>
 <img src="https://github.com/user-attachments/assets/71fff49a-3582-4998-a12a-27a6ba27ce7f" width="400" height="220"/>
 
 </p>
 
-### 🔬 Result Interpretation
+<h3 align="center"> Result 2: Performance vs Qubit Count</h2>
 
-- **Figure 1:** Early-stage training loss during QNN optimization under simulated decoherence.
-- **Figure 2:** Loss fluctuations reflecting noise sensitivity in variational circuits.
-- **Figure 3:** Training convergence behavior across iterations.
-- **Figure 4:** Stabilization phase of the QNN optimization process under NISQ constraints.
+<p align="center">
+<img width="700" height="380" alt="Screenshot 2026-03-22 at 12 26 59 AM" src="https://github.com/user-attachments/assets/87be3008-7cfb-4d81-8d8d-6c35af5ce727" />
+</p>
 
-These results highlight how **quantum noise and decoherence affect the optimization landscape of variational quantum circuits**, emphasizing the importance of **noise-aware circuit design and robust optimization strategies for practical QML systems**.
+<h3 align="center"> Result 3: Model Comparison </h2>
+<p align="center">
+<img width="700" height="380" alt="Screenshot 2026-03-22 at 12 27 10 AM" src="https://github.com/user-attachments/assets/5752c929-ffa6-471c-b0e8-dd2c33c32ca6" />
+</p>
+
+---
+
+## 🔬 Observations
+
+-  QNN achieves competitive performance against SVM
+-  It underperforms against classical Neural Networks due to: Limited qubits (NISQ) and  PennyLane constraints
+-  Underperform in Qubits > 5 case: When feeding input to quantum gates, superposition increased instability due to its multi-states within one state nature
+  - Pennylane simulator has noisy device (default.mixed) plugin that cause loss of quantum information hence **Decoherence** creates training data loss.
+
+---
+
+## 🏆 Best Model Performance (5-Qubit QNN)
+
+| Metric | Value |
+|-------|------|
+| Accuracy | **0.820** |
+| Precision | **0.858** |
+| Recall | **0.793** |
+| F1-score | **0.824** |
+| Inference Latency | **2.92 × 10⁻³ sec** |
+
+---
+
+## 📈 Evaluation Metrics
+
+- Accuracy  
+- Precision  
+- Recall 
+- F1-score  
+- Training loss curves  
+- Qubit scaling impact  
+- Inference latency  
+
+---
+
+### ⚛️ Future Extensions
+- Scale simulations to **higher qubits (100–500+)** and trying new simulator
+- Improve **noise-resilient training** through optimzation algorithm
+- Stabilize gradients in VQCs
+- Add **ROC-AUC & PR-AUC** metrics evaluation
+- Explore adaptive threshold set for comparing IPI feature value.
 
 ---
