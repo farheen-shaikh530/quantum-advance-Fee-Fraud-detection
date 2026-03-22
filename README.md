@@ -1,25 +1,44 @@
+<p align="center">
+  <img src="assets/qnn-hero.gif" alt="Quantum Fraud Detection Hero Banner" width="100%" />
+</p>
 
-#  Quantum vs Classical Models for Rapid Advance-Fee Fraud Detection under NISQ Constraints
+<h1 align="center">
+   Quantum vs Classical Models for Rapid Advance-Fee Fraud Detection under NISQ Constraints
+</h1>
 
- **Accepted and Presented at IEEE SoutheastCon 2026**  
- **Author:** Farheen Shabbir Shaikh  
- University of the Pacific - Masters in Computer Science
- Publication Date: March 2026
+<p align="center">
+  <b>Accepted and Presented at IEEE SoutheastCon 2026</b><br>
+ <b>Author: Farheen Shabbir Shaikh </b><br>
+ <b>Publication In: March 2026</b><br>
+</p>
+
 
 ---
 
-## 🚨 Problem Context: Advance-Fee Fraud (AFF)
+## 🚨 Situation Analysis: Advance-Fee Fraud (AFF)
 
-Advance-Fee Fraud (AFF) is a **time-critical financial scam** where attackers exploit urgency and emotional manipulation to extract payments.
+A message appears:
 
-> “We can approve your loan instantly… just pay a small processing fee first.”
+> “Loan approved instantly — just pay a $1000 processing fee.”
 
- Reality: No lender, no loan, no approval  
+It feels real. It feels urgent.
 
-### Victims
+The user pays.
+
+And then—silence.
+
+ **Reality:**
+- No lender  
+- No loan  
+- No approval
+ 
+
+**Victims:**
 - Individuals with low credit scores, struggling to secure loans   
 - Job seekers in urgent financial need  
 - Victims of relationship-based scams  
+
+ ~~A classic **Advance-Fee Fraud (AFF)** attack — designed to exploit urgency and trust before the victim has time to question it.
 
 ---
 
@@ -97,7 +116,19 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ## 📊 Experimental Results
 
-<h3 align="center"> Result 1: Training Loss (On qubit scaling)</h2>
+
+<h3 align="center"> Result 1: Performance vs Qubit Count</h2>
+
+<p align="center">
+<img width="700" height="380" alt="Screenshot 2026-03-22 at 12 26 59 AM" src="https://github.com/user-attachments/assets/87be3008-7cfb-4d81-8d8d-6c35af5ce727" />
+</p>
+
+<h3 align="center"> Result 2: Model Comparison </h2>
+<p align="center">
+<img width="700" height="380" alt="Screenshot 2026-03-22 at 12 27 10 AM" src="https://github.com/user-attachments/assets/5752c929-ffa6-471c-b0e8-dd2c33c32ca6" />
+</p>
+
+<h3 align="center"> Result 3: Training Loss (On qubit scaling)</h2>
 
 <p align="center">
 
@@ -108,16 +139,6 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 </p>
 
-<h3 align="center"> Result 2: Performance vs Qubit Count</h2>
-
-<p align="center">
-<img width="700" height="380" alt="Screenshot 2026-03-22 at 12 26 59 AM" src="https://github.com/user-attachments/assets/87be3008-7cfb-4d81-8d8d-6c35af5ce727" />
-</p>
-
-<h3 align="center"> Result 3: Model Comparison </h2>
-<p align="center">
-<img width="700" height="380" alt="Screenshot 2026-03-22 at 12 27 10 AM" src="https://github.com/user-attachments/assets/5752c929-ffa6-471c-b0e8-dd2c33c32ca6" />
-</p>
 
 ---
 
