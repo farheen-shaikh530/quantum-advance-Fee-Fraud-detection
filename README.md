@@ -38,7 +38,7 @@ And then—silence.
 - Job seekers in urgent financial need  
 - Victims of relationship-based scams  
 
- ~~A classic **Advance-Fee Fraud (AFF)** attack — designed to exploit urgency and trust before the victim has time to question it.
+ ~~A classic **Advance-Fee Fraud (AFF)** attack — creates trust and urgency before the victim has time to question it.
 
 ---
 
