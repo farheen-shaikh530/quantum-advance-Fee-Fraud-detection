@@ -9,9 +9,9 @@
 <p align="center">
   <b>Accepted and Presented at IEEE SoutheastCon 2026</b><br>
  <b>Author: Farheen Shabbir Shaikh</b><br>
- <b>Publication: April 2026</b><br>
+  <b>Publication In: April 2026</b><br>
+    <b>Status: Presented</b><br>
 </p>
-
 
 ---
 
@@ -44,11 +44,7 @@ And then—silence.
 
 ## 💡 Motivation
 
-- **7,097 AFF complaints (IC3 Report 2024)**
--  Victims pay upfront for **non-existent services**
--  Fraud happens **within minutes → requires early detection**
-
-- Traditional ML models rely on historical patterns. This work focuses on **early behavioral signals**
+Social engineering attacks in financial institute—such as Business Email Compromise (BEC), whaling, smishing, vishing, and scareware—have been widely studied, typically focusing on isolated attack instances. Aim of this study is to experiment how Quantum Machine Learning can do rapid classifications for Advance-Fee Fraud (AFF). AFF study is underexplored, particularly in how these attacks unfold in sequential phases that can lead to significant financial loss at the final phase. IC3 (2024) reports 7,097 AFF complaints, where victims are persuaded to make upfront payments for non-existent services, often within minutes—highlighting the need for early detection. Unlike traditional machine learning approaches that rely on historical patterns, this work emphasizes early behavioral signals to detect and intervene in fraud at its initial stages.
 
 ---
 
