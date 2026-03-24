@@ -9,7 +9,7 @@
 <p align="center">
   <b>Accepted and Presented at IEEE SoutheastCon 2026</b><br>
  <b>Author: Farheen Shabbir Shaikh</b><br>
- <b>Publication: March 2026</b><br>
+ <b>Publication: April 2026</b><br>
 </p>
 
 
