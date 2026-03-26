@@ -50,7 +50,7 @@ Social engineering attacks in financial institute—such as Business Email Compr
 
 ## 🧠 Proposed Approach
 
-We propose a **Quantum Neural Network (QNN)** framework that:
+I propose a **Quantum Neural Network (QNN)** framework that:
 
 - Classify **early-stage fraud signals**
 - Uses **behavior-driven temporal features**
