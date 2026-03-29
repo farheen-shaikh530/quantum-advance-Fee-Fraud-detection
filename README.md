@@ -9,7 +9,7 @@
 <p align="center">
   <b>Accepted and Presented at IEEE SoutheastCon 2026</b><br>
  <b>Author: Farheen Shabbir Shaikh</b><br>
-  <b>Publication In: April 2026</b><br>
+  <b>Published on: April 2026</b><br>
     <b>Status: Presented</b><br>
 </p>
 
@@ -48,7 +48,7 @@ Social engineering attacks in financial institute—such as Business Email Compr
 
 ---
 
-## 🧠 Proposed Approach
+##  Proposed Approach
 
 I propose a **Quantum Neural Network (QNN)** framework that:
 
@@ -85,7 +85,7 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ---
 
-## 🧠 Model Architecture
+##  Model Architecture
 
 ### Quantum Model
 - Variational Quantum Neural Network (QNN)
@@ -110,21 +110,17 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ---
 
-## 📊 Experimental Results
+## 📊 Research Results
 
 
-<h3 align="center"> Result 1: Performance vs Qubit Count</h2>
+<h3 align="center"> Result 1: A-PRF Performance against Qubit count 4,5,6,7 </h2>
 
 <p align="center">
 <img width="700" height="380" alt="Screenshot 2026-03-22 at 12 26 59 AM" src="https://github.com/user-attachments/assets/87be3008-7cfb-4d81-8d8d-6c35af5ce727" />
 </p>
 
-<h3 align="center"> Result 2: Model Comparison </h2>
-<p align="center">
-<img width="700" height="380" alt="Screenshot 2026-03-22 at 12 27 10 AM" src="https://github.com/user-attachments/assets/5752c929-ffa6-471c-b0e8-dd2c33c32ca6" />
-</p>
 
-<h3 align="center"> Result 3: Training Loss (On qubit scaling)</h2>
+<h3 align="center"> Result 2: Training Loss during qubit scale (On qubit scaling)</h2>
 
 <p align="center">
 
@@ -135,6 +131,10 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 </p>
 
+<h3 align="center"> Result 3: Model Comparison: Logistic Regression, State Vector Machine, Neural Network, out best performed model Quantum Neural Network with 5 Qubits </h2>
+<p align="center">
+<img width="700" height="380" alt="Screenshot 2026-03-22 at 12 27 10 AM" src="https://github.com/user-attachments/assets/5752c929-ffa6-471c-b0e8-dd2c33c32ca6" />
+</p>
 
 ---
 
