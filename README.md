@@ -172,10 +172,9 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 ---
 
 ### ⚛️ Future Extensions
-- Scale simulations to **higher qubits (100–500+)** and trying new simulator
-- Improve **noise-resilient training** through optimzation algorithm
-- Stabilize gradients in VQCs
-- Add **ROC-AUC & PR-AUC** metrics evaluation
-- Explore adaptive threshold set for comparing IPI feature value.
-
+- Scale simulations to **higher qubits (100–500+)** and trying different simultaors e.g. cuQuantum, Qiskit.
+- Improve **noise-resilient training** through optimzation algorithms e.g. Quantum Approximate Optimization Algorithm, Variational Quantum Eigensolver.
+- Add **ROC-AUC & PR-AUC** metrics evaluation for test same type of attack
+- Explore threshold set for comparing IPI feature value to flag 0 or 1.
+ 
 ---
