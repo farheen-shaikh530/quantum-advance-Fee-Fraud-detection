@@ -7,10 +7,9 @@
 </h1>
 
 <p align="center">
-  <b>Accepted and Presented at IEEE SoutheastCon 2026</b><br>
- <b>Author: Farheen Shabbir Shaikh</b><br>
-  <b>Published on: April 2026</b><br>
-    <b>Status: Presented</b><br>
+  <b>Author:</b> Farheen Shabbir Shaikh <br>
+  <b>My Role:</b> Researcher & Developer <br>
+  <b>Project Type:</b> Research Project
 </p>
 
 ---
