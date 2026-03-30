@@ -96,8 +96,8 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ### Classical Baselines
 - Logistic Regression  
-- Support Vector Machine (RBF)  
-- Neural Network (MLP)
+- Support Vector Machine  
+- Neural Network
 
 
 ---
@@ -112,15 +112,14 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ## 📊 Research Results
 
-
-<h3 align="center"> Result 1: A-PRF Performance against Qubit count 4,5,6,7 </h2>
-
 <p align="center">
 <img width="700" height="380" alt="Screenshot 2026-03-22 at 12 26 59 AM" src="https://github.com/user-attachments/assets/87be3008-7cfb-4d81-8d8d-6c35af5ce727" />
 </p>
+<h5 align="center"> Result 1: A-PRF Performance against Qubit count 4,5,6,7 </h5>
 
 
-<h3 align="center"> Result 2: Training Loss during qubit scale (On qubit scaling)</h2>
+---
+
 
 <p align="center">
 
@@ -129,12 +128,17 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 <img src="https://github.com/user-attachments/assets/7e363a41-6b72-4fa9-ba35-563ef7c8bd05" width="400" height="220"/>
 <img src="https://github.com/user-attachments/assets/71fff49a-3582-4998-a12a-27a6ba27ce7f" width="400" height="220"/>
 
+<h5 align="center"> Result 2: Training Loss during qubit scale (On qubit scaling)</h5>
+
 </p>
 
-<h3 align="center"> Result 3: Model Comparison: Logistic Regression, State Vector Machine, Neural Network, out best performed model Quantum Neural Network with 5 Qubits </h2>
+---
+
 <p align="center">
 <img width="700" height="380" alt="Screenshot 2026-03-22 at 12 27 10 AM" src="https://github.com/user-attachments/assets/5752c929-ffa6-471c-b0e8-dd2c33c32ca6" />
 </p>
+
+<h5 align="center"> Result 3: Model Comparison: Logistic Regression, State Vector Machine, Neural Network, out best performed model Quantum Neural Network with 5 Qubits </h5>
 
 ---
 
