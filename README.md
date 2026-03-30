@@ -181,4 +181,3 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 - Add **ROC-AUC & PR-AUC** metrics evaluation for test same type of attack
 - Explore threshold set for comparing IPI feature value to flag 0 or 1.
  
----
