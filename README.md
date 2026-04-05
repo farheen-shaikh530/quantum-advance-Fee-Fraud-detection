@@ -13,7 +13,7 @@
 
 ---
 
-## 🚨 Situation Analysis: Advance-Fee Fraud (AFF)
+## Situation Analysis: Advance-Fee Fraud (AFF)
 
 A message appears:
 
@@ -40,13 +40,13 @@ And then—silence.
 
 ---
 
-## 💡 Motivation
+##  Motivation
 
 Social engineering attacks in financial institute—such as Business Email Compromise (BEC), whaling, smishing, vishing, and scareware—have been widely studied, typically focusing on isolated attack instances. Aim of this study is to experiment how Quantum Machine Learning can do rapid classifications for Advance-Fee Fraud (AFF). AFF study is underexplored, particularly in how these attacks unfold in sequential phases that can lead to significant financial loss at the final phase. IC3 (2024) reports 7,097 AFF complaints, where victims are persuaded to make upfront payments for non-existent services, often within minutes—highlighting the need for early detection. Unlike traditional machine learning approaches that rely on historical patterns, this work emphasizes early behavioral signals to detect and intervene in fraud at its initial stages.
 
 ---
 
-##  Proposed Approach
+##  System Overview
 
 I propose a **Quantum Neural Network (QNN)** framework that:
 
@@ -57,7 +57,7 @@ I propose a **Quantum Neural Network (QNN)** framework that:
 
 ---
 
-## 🗂️ Custom: Dataset Construction
+##  Customized Dataset Construction
 
 | Feature | Description |
 |--------|------------|
@@ -73,11 +73,11 @@ I propose a **Quantum Neural Network (QNN)** framework that:
 - Fraud Cases: **100 (5%)**
 - Non-Fraud: **1,900 (95%)**
 
-⚠️ **Challenge:** Imbalanced dataset → risk of bias toward non-fraud class
+ **Challenge:** Imbalanced dataset → risk of bias toward non-fraud class
 
 ---
 
-## ⚙️ Feature Engineering(Novel)
+##  Feature Engineering(Novel)
 
 Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw timestamps and amounts into meaningful signals. 50 seconds < IPI = higher likelihood of fraud
 
@@ -100,7 +100,7 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ---
 
-## ⚙️ Training Strategy
+##  Training Strategy
 
 - Mini-batch training  
 - Adam optimizer  
@@ -108,7 +108,7 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ---
 
-## 📊 Research Results
+## Research Results
 
 <p align="center">
 <img width="700" height="380" alt="Screenshot 2026-03-22 at 12 26 59 AM" src="https://github.com/user-attachments/assets/87be3008-7cfb-4d81-8d8d-6c35af5ce727" />
@@ -140,7 +140,7 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ---
 
-## 🔬 Observations
+##  Observations
 
 -  QNN achieves competitive performance against SVM
 -  It underperforms against classical Neural Networks due to: Limited qubits (NISQ) and  PennyLane constraints
@@ -149,7 +149,7 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ---
 
-## 🏆 Best Model Performance (5-Qubit QNN)
+##  Best Model Performance (5-Qubit QNN)
 
 | Metric | Value |
 |-------|------|
@@ -161,7 +161,7 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ---
 
-## 📈 Evaluation Metrics
+##  Evaluation Metrics
 
 - Accuracy  
 - Precision  
@@ -173,7 +173,7 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw time
 
 ---
 
-### ⚛️ Future Extensions
+### Future Extensions
 - Scale simulations to **higher qubits (100–500+)** and trying different simultaors e.g. cuQuantum, Qiskit.
 - Improve **noise-resilient training** through optimzation algorithms e.g. Quantum Approximate Optimization Algorithm, Variational Quantum Eigensolver.
 - Add **ROC-AUC & PR-AUC** metrics evaluation for test same type of attack
