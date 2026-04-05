@@ -48,7 +48,7 @@ Social engineering attacks in financial institute—such as Business Email Compr
 
 ##  System Overview
 
-I propose a **Quantum Neural Network (QNN)** framework that:
+The propose a **Quantum Neural Network (QNN)** framework that:
 
 - Classify **early-stage fraud signals**
 - Uses **behavior-driven temporal features**
@@ -79,7 +79,7 @@ I propose a **Quantum Neural Network (QNN)** framework that:
 
 ##  Feature Engineering(Novel)
 
-Inter-Payment Interval (IPI): Behavioral Feature Engineering: Transform raw timestamps and amounts into meaningful signals. 50 seconds < IPI = higher likelihood of fraud
+Inter-Payment Interval (IPI): Behavioral Feature Engineering. Transform raw timestamps and amounts into meaningful signals. 50 seconds < IPI = higher likelihood of fraud
 
 ---
 
