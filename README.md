@@ -13,30 +13,14 @@
 
 ---
 
-## Situation Analysis: Advance-Fee Fraud (AFF)
+##  Overview
 
-A message appears:
+The proposed **Quantum Neural Network (QNN)** framework to:
 
-> “Loan approved instantly — just pay a $1000 processing fee.”
-
-It feels real. It feels urgent.
-
-The user pays.
-
-And then—silence.
-
- **Reality:**
-- No lender  
-- No loan  
-- No approval
- 
-
-**Victims:**
-- Individuals with low credit scores, struggling to secure loans   
-- Job seekers in urgent financial need  
-- Victims of relationship-based scams  
-
- ~~A classic **Advance-Fee Fraud (AFF)** attack — creates trust and urgency before the victim has time to question it.
+- Classify **early-stage fraud signals**
+- Uses **behavior-driven temporal features**
+- Operates under **NISQ (Noisy Intermediate-Scale Quantum) constraints**
+- Benchmarks against **3 widely used ML models**
 
 ---
 
@@ -44,16 +28,6 @@ And then—silence.
 
 Social engineering attacks in financial institute—such as Business Email Compromise (BEC), whaling, smishing, vishing, and scareware—have been widely studied, typically focusing on isolated attack instances. Aim of this study is to experiment how Quantum Machine Learning can do rapid classifications for Advance-Fee Fraud (AFF). AFF study is underexplored, particularly in how these attacks unfold in sequential phases that can lead to significant financial loss at the final phase. IC3 (2024) reports 7,097 AFF complaints, where victims are persuaded to make upfront payments for non-existent services, often within minutes—highlighting the need for early detection. Unlike traditional machine learning approaches that rely on historical patterns, this work emphasizes early behavioral signals to detect and intervene in fraud at its initial stages.
 
----
-
-##  System Overview
-
-The propose a **Quantum Neural Network (QNN)** framework that:
-
-- Classify **early-stage fraud signals**
-- Uses **behavior-driven temporal features**
-- Operates under **NISQ (Noisy Intermediate-Scale Quantum) constraints**
-- Benchmarks against **3 widely used ML models**
 
 ---
 
