@@ -2,14 +2,8 @@
   <img src="assets/qnn-hero.gif" alt="Quantum Fraud Detection Hero Banner" width="100%" />
 </p>
 
-<h1 align="center">
-   Quantum vs Classical Models for Rapid Advance-Fee Fraud Detection under NISQ Constraints
-</h1>
+<img width="2560" height="1280" alt="quantum_cover" src="https://github.com/user-attachments/assets/646ed3d3-0a4f-4b44-9bed-d13741d04ef0" />
 
-<p align="center">
-  <b>Project Type:</b> Research Project <br>
-    <b>My Role:</b> Researcher & Developer 
-</p>
 
 ---
 
