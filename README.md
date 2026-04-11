@@ -59,6 +59,8 @@ Inter-Payment Interval (IPI): Behavioral Feature Engineering. Transform raw time
 
 ##  Model Architecture
 
+<img width="1360" height="1520" alt="QNN" src="https://github.com/user-attachments/assets/0251b469-0afb-4765-b941-d6e380b16309" />
+
 ### Quantum Model
 - Variational Quantum Neural Network (QNN)
 - Angle encoding
