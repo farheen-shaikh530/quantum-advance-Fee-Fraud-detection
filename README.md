@@ -3,7 +3,14 @@
 </p>
 
 <img width="2560" height="1280" alt="quantum_cover" src="https://github.com/user-attachments/assets/646ed3d3-0a4f-4b44-9bed-d13741d04ef0" />
+<br>
 
+<p align="center">
+  <b>Project Type:</b> Research Project <br>
+  <b>My Role:</b> Researcher & Developer <br>
+   <b> Expected to Publish Month : June 2026
+  
+</p>
 
 ---
 
@@ -15,7 +22,6 @@ The proposed **Quantum Neural Network (QNN)** framework to:
 - Uses **behavior-driven temporal features**
 - Operates under **NISQ (Noisy Intermediate-Scale Quantum) constraints**
 - Benchmarks against **3 widely used ML models**
-- Expected to Published: June 2026
 
 ---
 
