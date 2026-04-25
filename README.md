@@ -7,8 +7,12 @@
 
 <p align="center">
   <b>Project Type:</b> Research Project <br>
-  <b>My Role:</b> Researcher & Developer <br>
-   <b> Expected to Publish On : June 2026
+      <b> Published Date : April 20, 2026 <br> 
+         <b> Published Conference : SoutheastCon 2026 <br> 
+   <b> DOI : https://ieeexplore.ieee.org/document/11476481 <br>
+     <b> Skill Exposer : Scikit-learn, PyTorch, Matplotlib, Pandas,NumPy, Quantum Neural Network, Logistic Regression <br> 
+
+
   
 </p>
 
